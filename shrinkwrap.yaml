@@ -2,6 +2,7 @@ dependencies:
   bcrypt: 4.0.1
   body-parser: 1.19.0
   cookie-parser: 1.4.5
+  dotenv: 8.2.0
   express: 4.17.1
   lowdb: 1.0.0
   mailgun-js: 0.22.0
@@ -394,6 +395,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-6oCxBqh1OHdOijpKWv4pPeSJ4Kk=
+  /dotenv/8.2.0:
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   /ee-first/1.1.1:
     dev: false
     resolution:
@@ -1711,6 +1718,7 @@ specifiers:
   bcrypt: ^4.0.1
   body-parser: ^1.19.0
   cookie-parser: ^1.4.5
+  dotenv: ^8.2.0
   express: ^4.17.1
   lowdb: ^1.0.0
   mailgun-js: ^0.22.0
