@@ -2,8 +2,11 @@ extends ../template/common
 block content
 
   h2 Users
+  
+  a(href="/users/create") 
+    buton(class="btn btn-primary mt-4 mb-4") Create
 
-  table("cellpadding"=10 class="table")
+  table("cellpadding"=10 class="table table-bordered")
     tr
       th Name
       th Action
@@ -21,5 +24,41 @@ block content
         td
           a(href="/users/" + user.id + "/delete") 
             button.btn.btn-danger Delete
-  a(href="/users/create") 
-    buton(class="btn btn-primary") Register
+  if numPage <= 3
+    nav.Page.navigation.example
+      ul.pagination.justify-content-center
+        li.page-item.disabled
+          a.page-link.disabled Previous
+        li.page-item
+          a.page-link(href=`/users?page=${page-1}`) #{page - 1}
+        li.page-item
+          a.page-link(href=`/users?page=${page}`) #{page}
+        li.page-item
+          a.page-link(href=`/users?page=${page+1}`) #{page + 1}
+        li.page-item
+          a.page-link.disabled Next
+  else
+    nav.Page.navigation.example
+      ul.pagination.justify-content-center
+        if page <= 3
+          li.page-item.disabled
+            a.page-link Previous
+        else
+          li.page-item
+            a.page-link(href=`/users?page=${page-1}`) Previous
+        li.page-item
+          a.page-link(href=`/users?page=${page-1}`) #{page - 1}
+        li.page-item.active
+          a.page-link(href=`/users?page=${page}`) #{page}
+        if page < numPage
+          li.page-item
+            a.page-link(href=`/users?page=${page+1}`) #{page + 1}
+          li.page-item
+            a.page-link(href=`/users?page=${page+1}`) Next
+        else
+          li.page-item.disabled
+            a.page-link(href=`/users?page=${page+1}`) #{page + 1}
+          li.page-item.disabled
+            a.page-link(href=`/users?page=${page+1}`) Next
+        
+  
