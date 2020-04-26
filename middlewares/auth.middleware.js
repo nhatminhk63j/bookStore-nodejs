@@ -23,7 +23,6 @@ module.exports.requireAuth = (req, res, next) => {
   else if(user){
     next();
   }
-  res.redirect('/auth/login');
 }
 
 module.exports.requireAdmin = (req, res, next) => {

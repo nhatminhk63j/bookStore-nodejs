@@ -1,0 +1,11 @@
+extends ../template/common
+block content
+    h1  Profile
+    if user.avatarUrl
+        img(src=user.avatarUrl, alt="user-avatar", height="100px")
+    else
+        img(src="https://1.bp.blogspot.com/-A7UYXuVWb_Q/XncdHaYbcOI/AAAAAAAAZhM/hYOevjRkrJEZhcXPnfP42nL3ZMu4PvIhgCLcBGAsYHQ/s1600/Trend-Avatar-Facebook%2B%25281%2529.jpg", alt="", height="100px")
+    p.mt-4
+        a(href="/profile/avatar") Change avatar
+    h3 Name : #{user.name}
+    h3 Email : #{user.email}

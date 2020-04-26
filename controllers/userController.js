@@ -45,3 +45,4 @@ module.exports.delete = (req, res) => {
   db.get('users').remove({id: req.params.id}).write();
   res.redirect('/users');
 }
+
