@@ -40,7 +40,7 @@ module.exports.login = (req, res, next) => {
       });
     }
     if(user.wrongLoginCount === 4) error.push('Wrong password 4 times long!')
-    else if(bcrypt.compareSync(password, user.password )){
+    if(bcrypt.compareSync(password, user.password )){
       res.cookie('userId', user.id, { signed: true });
       next();
     } else {

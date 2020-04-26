@@ -1,0 +1,11 @@
+extends ../template/common
+block content
+    h1 Change avatar user
+    if user.avatarUrl
+        img(src=user.avatarUrl, alt="user-avatar")
+    else
+        img(src="https://1.bp.blogspot.com/-A7UYXuVWb_Q/XncdHaYbcOI/AAAAAAAAZhM/hYOevjRkrJEZhcXPnfP42nL3ZMu4PvIhgCLcBGAsYHQ/s1600/Trend-Avatar-Facebook%2B%25281%2529.jpg", alt="", height="100px")
+    
+    form.mt-4(action="/profile/avatar", method="post", enctype="multipart/form-data")
+        input(type="file", name="avatar")
+        button.btn.btn-primary(type="submit") Save change

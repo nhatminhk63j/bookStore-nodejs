@@ -3,7 +3,7 @@ const uuid = require('uuid/v4');
 
 module.exports.index = (req, res) => {
   var transactions = db.get('transactions').value()
-  .filter(item => item.userId === req.cookies.userId)
+  .filter(item => item.userId === req.signedCookies.userId)
   .map(item => {
     return {
       bookName: db.get('books').find({id: item.bookId}).value().title,
@@ -19,7 +19,7 @@ module.exports.index = (req, res) => {
 }
 
 module.exports.getCreate = (req, res) => {
-  var user = db.get('users').find({id: req.cookies.userId}).value();
+  var user = db.get('users').find({id: req.signedCookies.userId}).value();
   var books = db.get('books').value();
   var users = [];
   if(user.isAdmin) users = db.get('users').value();

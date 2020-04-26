@@ -25,6 +25,8 @@ const userRouter = require("./routers/userRouter");
 const bookRouter = require("./routers/bookRouter");
 const transactionRouter = require("./routers/transactionRouter");
 const authRouter = require("./routers/authRouter");
+const uploadRouter = require("./routers/uploadRouter");
+const profileRouter = require("./routers/profileRouter");
 
 const cookieMiddleware = require("./middlewares/cookie.middleware"); // middleware to count number access
 const authMiddleware = require("./middlewares/auth.middleware");
@@ -45,6 +47,10 @@ app.use("/books", authMiddleware.requireAdmin, bookRouter);
 app.use("/transactions", authMiddleware.requireAuth, transactionRouter);
 
 app.use("/auth", authRouter);
+
+app.use("/upload", uploadRouter);
+
+app.use("/profile", authMiddleware.requireAuth, profileRouter);
 
 // listen for requests :)
 app.listen(process.env.PORT, () => {
