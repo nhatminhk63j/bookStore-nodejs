@@ -70,14 +70,14 @@
       "email": "java@gmail.com",
       "password": "123123",
       "isAdmin": true,
-      "wrongLoginCount": 0
+      "wrongLoginCount": 4
     },
     {
       "id": "fa032fa0-0142-4d29-87e9-7ecd6c837cde",
       "name": "Nhat Minh",
-      "email": "nhatminh@gmail.com",
+      "email": "nhatngo11a1@gmail.com",
       "password": "$2b$12$RCQGcCi6cu05c0wX/nMJ5.9OI0Gla7BHjjSMFH1Gf80msiyDUeNAO",
-      "wrongLoginCount": 0
+      "wrongLoginCount": 4
     }
   ],
   "transactions": [

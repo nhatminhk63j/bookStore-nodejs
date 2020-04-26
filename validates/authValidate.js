@@ -1,5 +1,9 @@
 const db = require('../db')
 const bcrypt = require('bcrypt');
+ var Mailgun = require('mailgun-js');
+require('dotenv').config();
+
+const mailgun = new Mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: process.env.MAILGUN_DOMAIN});
 
 module.exports.login = (req, res, next) => {
   var error = [];
@@ -10,7 +14,8 @@ module.exports.login = (req, res, next) => {
   }
   if(!password){
     error.push('Password is required!');
-  }
+  };
+  console.log(process.env);
   if(email && password){
     var user = db.get('users').find({email: email}).value();
     if(!user) {
@@ -21,6 +26,18 @@ module.exports.login = (req, res, next) => {
         password: password
       })
       return ;
+    }
+    if(user.wrongLoginCount === 3) {
+      var data = {
+        from: 'nhatngo11a1@gmail.com',
+        to: user.email,
+        subject: 'Alert from Ngo Sach Nhat',
+        html: 'You enter wrong password 3 times. Please enter true!'
+      }
+      mailgun.messages().send(data, function (err, body){
+        if(err) console.log('Have error send mail!');
+        else console.log("Mail successful!");
+      });
     }
     if(user.wrongLoginCount === 4) error.push('Wrong password 4 times long!')
     else if(bcrypt.compareSync(password, user.password )){
