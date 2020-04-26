@@ -1,0 +1,15 @@
+extends ../template/common
+block content
+  h1 List books
+  
+  each book in books
+    div.d-flex.justify-content-between.align-items-center.mb-4.bg-light.p-5
+      div.info
+        p=book.title
+        p=book.description
+      div.row
+        a(href="/books/" + book.id + "/modify") 
+          button(class="btn btn-primary mr-1") Edit
+
+        a(href="/books/" + book.id + "/delete") 
+          button(class="btn btn-danger") Delete

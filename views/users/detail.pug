@@ -1,0 +1,13 @@
+extends ../template/common
+block content
+
+  h1 User detail
+
+  p
+    span.pf-5 Name: 
+    span= user.name
+  p
+    span.pf-5 Email: 
+    span= user.email
+
+  a(href="/users") Back to users

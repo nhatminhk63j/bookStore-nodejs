@@ -1,0 +1,16 @@
+extends ../template/common
+block content
+  h1 Login
+  
+  if error
+    each err in error
+      .alert.alert-danger=err
+
+  form(action="/auth/login" method="POST")
+    label(for="email") Email
+    input.form-control(type="email" id="email" name="email" value=email ? email : '')
+    
+    label(for="password") Password
+    input.form-control(type="password" id="password" name="password" value=password ? password : '')
+    
+    button.btn.btn-primary.mt-5 Login
