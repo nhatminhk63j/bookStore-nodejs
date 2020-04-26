@@ -20,14 +20,14 @@ module.exports.requireAuth = (req, res, next) => {
     })
     return;
   }
-  if(user){
+  else if(user){
     next();
   }
   res.redirect('/auth/login');
 }
 
 module.exports.requireAdmin = (req, res, next) => {
-  if(!req.cookies.userId){
+  if(!req.signedCookies.userId){
     res.redirect('/auth/login');
     return ;
   }
