@@ -1,0 +1,17 @@
+block variables
+html
+  head
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+    link(href="/assets/bookstorelogo.png" rel="icon" type="image/png")
+    link(rel="stylesheet" href="/style.css")
+  body
+    div.container
+      nav(class="bg-light pt-3 pb-3")
+        if admin
+          a(class="pr-5" href="/books") Books
+          a(class="pr-5" href="/users") Users
+        a(class="pr-5" href="/transactions") Transactions
+        .float-right
+          a(class="pr-2" href="/auth/login") Login
+          a(class="pr-2" href="/auth/register") Register
+      block content

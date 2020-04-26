@@ -1,0 +1,25 @@
+extends ../template/common
+block content
+
+  h2 Users
+
+  table("cellpadding"=10 class="table")
+    tr
+      th Name
+      th Action
+      th
+      th
+    each user in users
+      tr
+        td=user.name
+        td
+          button.btn.btn-default 
+            a(href="/users/" + user.id + "/detail")  Detail
+        td
+          a(href="/users/" + user.id + "/modify")
+            button.btn.btn-success Edit
+        td
+          a(href="/users/" + user.id + "/delete") 
+            button.btn.btn-danger Delete
+  a(href="/users/create") 
+    buton(class="btn btn-primary") Register

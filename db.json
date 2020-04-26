@@ -1,0 +1,109 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Book 1",
+      "description": "This is a book 1"
+    },
+    {
+      "id": "2",
+      "title": "Book 2",
+      "description": "This is a book 2"
+    },
+    {
+      "id": "3",
+      "title": "Book 3",
+      "description": "This is a book 3"
+    },
+    {
+      "id": "4",
+      "title": "Book 4",
+      "description": "This is a book 4"
+    }
+  ],
+  "users": [
+    {
+      "id": "2",
+      "name": "Jack",
+      "email": "jack@gmail.com",
+      "password": "123123",
+      "wrongLoginCount": 4
+    },
+    {
+      "id": "3",
+      "name": "Brown",
+      "email": "brown@gmail.com",
+      "password": "123123",
+      "wrongLoginCount": 0
+    },
+    {
+      "id": "4",
+      "name": "Park",
+      "email": "park@gmail.com",
+      "password": "123123",
+      "wrongLoginCount": 0
+    },
+    {
+      "id": "d6c0c982-52aa-4643-9db4-409d2a6e6536",
+      "name": "Peter",
+      "email": "peter@gmail.com",
+      "password": "123123",
+      "wrongLoginCount": 0
+    },
+    {
+      "id": "d6d1d748-f7de-49f9-96d2-c503a40beb4d",
+      "name": "Express",
+      "email": "express@gmail.com",
+      "password": "123123",
+      "wrongLoginCount": 0
+    },
+    {
+      "id": "cbb2c96e-1a6c-49b3-9e53-5c8a9599da31",
+      "name": "Jonathan",
+      "email": "jonathan@gmail.com",
+      "password": "123123",
+      "wrongLoginCount": 0
+    },
+    {
+      "id": "4f8d15b2-f24a-435e-9806-72eb915641b0",
+      "name": "Java",
+      "email": "java@gmail.com",
+      "password": "123123",
+      "isAdmin": true,
+      "wrongLoginCount": 0
+    },
+    {
+      "id": "fa032fa0-0142-4d29-87e9-7ecd6c837cde",
+      "name": "Nhat Minh",
+      "email": "nhatminh@gmail.com",
+      "password": "$2b$12$RCQGcCi6cu05c0wX/nMJ5.9OI0Gla7BHjjSMFH1Gf80msiyDUeNAO",
+      "wrongLoginCount": 0
+    }
+  ],
+  "transactions": [
+    {
+      "id": "5d37dbcb-25bf-4578-a74a-9aedb5379f04",
+      "bookId": "2",
+      "userId": "3",
+      "isComplete": false
+    },
+    {
+      "id": "1f26e719-667c-4c44-9ac4-95ab47297043",
+      "bookId": "3",
+      "userId": "d6c0c982-52aa-4643-9db4-409d2a6e6536",
+      "isComplete": true
+    },
+    {
+      "id": "fb7c5c70-ce9e-463d-9793-ad31e6479b43",
+      "bookId": "4",
+      "userId": "d6d1d748-f7de-49f9-96d2-c503a40beb4d",
+      "isComplete": false
+    },
+    {
+      "id": "03dd88ce-09af-4c56-b8e1-60a87a4b7d25",
+      "bookId": "2",
+      "userId": "4",
+      "isComplete": true
+    }
+  ]
+}

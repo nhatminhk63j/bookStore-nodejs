@@ -1,0 +1,22 @@
+extends ../template/common
+block content
+  h1 Create new transaction
+
+  form(action="" method="POST")
+    label(for="book") Name's book
+    br
+    select(id="book" name="bookId" class="custom-select")
+      each book in books
+        option(value=book.id) #{book.title}
+    br
+    br
+    label(for="user") User name
+    br
+    select(id="user" name="userId" class="custom-select")
+      each user in users
+        option(value=user.id) #{user.name}
+    br
+    br
+    button(class="btn btn-primary") Create
+
+  

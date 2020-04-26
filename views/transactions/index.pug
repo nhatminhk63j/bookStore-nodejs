@@ -1,0 +1,26 @@
+extends ../template/common
+block variables
+  - var admin=isAdmin
+block content
+
+  h1 Transactions
+
+  table(cellpadding="15" class="table")
+    tr
+      th Name's book
+      th Borrowed user
+      th Status
+    each transaction in transactions
+      tr
+        td=transaction.bookName
+        td=transaction.userName
+        if transaction.isComplete
+          td Done
+        else
+          td
+            a(href="/transactions/" + transaction.id + "/complete") Complete
+  a(href="/transactions/create") 
+    button.btn.btn-primary New transaction
+
+      
+    

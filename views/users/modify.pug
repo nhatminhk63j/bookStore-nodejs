@@ -1,0 +1,7 @@
+extends ../template/common
+block content
+  h1 Modify user
+
+  form(action="", method="POST")
+    input(type="text" name="name" value=user.name)
+    button Save
